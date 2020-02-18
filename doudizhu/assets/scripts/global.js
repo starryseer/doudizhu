@@ -1,0 +1,12 @@
+import SocketController from './data/SocketController.js';
+import playerData from './data/playerData.js';
+import roomData from './data/roomData.js';
+import gameData from './data/gameData.js';
+import EventListener from './utility/EventListener.js';
+const global = {} || global;
+global.playerData = playerData();
+global.roomData = roomData();
+global.gameData = gameData();
+global.socket = SocketController();
+global.eventListener = EventListener({});
+export default global;

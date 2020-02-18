@@ -1,0 +1,134 @@
+[2020-02-14 20:47:58 #8543.1]	INFO	Server is shutdown now
+string(22) "shake success at fd :1"
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
+string(22) "shake success at fd :5"
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+string(22) "shake success at fd :8"
+string(22) "shake success at fd :9"
+string(23) "shake success at fd :10"
+string(23) "shake success at fd :11"
+string(23) "shake success at fd :12"
+string(23) "shake success at fd :13"
+string(23) "shake success at fd :14"
+string(23) "shake success at fd :15"
+string(23) "shake success at fd :16"
+string(23) "shake success at fd :17"
+string(23) "shake success at fd :18"
+string(23) "shake success at fd :19"
+string(23) "shake success at fd :20"
+string(23) "shake success at fd :21"
+string(23) "shake success at fd :22"
+string(23) "shake success at fd :23"
+string(23) "shake success at fd :24"
+string(23) "shake success at fd :25"
+string(23) "shake success at fd :26"
+string(23) "shake success at fd :27"
+string(23) "shake success at fd :28"
+string(23) "shake success at fd :29"
+string(23) "shake success at fd :30"
+string(23) "shake success at fd :31"
+string(23) "shake success at fd :32"
+string(23) "shake success at fd :33"
+string(23) "shake success at fd :34"
+string(23) "shake success at fd :35"
+string(23) "shake success at fd :36"
+string(23) "shake success at fd :37"
+string(23) "shake success at fd :38"
+string(23) "shake success at fd :39"
+string(23) "shake success at fd :40"
+string(23) "shake success at fd :41"
+string(23) "shake success at fd :42"
+string(23) "shake success at fd :43"
+string(23) "shake success at fd :44"
+string(23) "shake success at fd :45"
+string(23) "shake success at fd :46"
+string(23) "shake success at fd :47"
+string(23) "shake success at fd :48"
+string(23) "shake success at fd :49"
+string(23) "shake success at fd :50"
+string(23) "shake success at fd :51"
+string(23) "shake success at fd :52"
+string(23) "shake success at fd :53"
+string(23) "shake success at fd :54"
+string(23) "shake success at fd :55"
+string(23) "shake success at fd :56"
+string(23) "shake success at fd :57"
+string(23) "shake success at fd :58"
+string(23) "shake success at fd :59"
+string(23) "shake success at fd :60"
+string(23) "shake success at fd :61"
+string(23) "shake success at fd :62"
+string(23) "shake success at fd :63"
+string(23) "shake success at fd :64"
+string(23) "shake success at fd :65"
+string(23) "shake success at fd :66"
+string(23) "shake success at fd :67"
+string(23) "shake success at fd :68"
+string(23) "shake success at fd :69"
+string(23) "shake success at fd :70"
+string(23) "shake success at fd :71"
+string(23) "shake success at fd :72"
+string(23) "shake success at fd :73"
+string(23) "shake success at fd :74"
+string(23) "shake success at fd :75"
+string(23) "shake success at fd :76"
+string(23) "shake success at fd :77"
+string(23) "shake success at fd :78"
+string(23) "shake success at fd :79"
+string(23) "shake success at fd :80"
+string(23) "shake success at fd :81"
+string(23) "shake success at fd :82"
+string(23) "shake success at fd :84"
+string(23) "shake success at fd :85"
+string(23) "shake success at fd :89"
+[2020-02-16 16:21:33 #8604.1]	INFO	Server is shutdown now
+[2020-02-16 18:14:42 *18196.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\Socket\Exception\ControllerPoolEmpty: controller pool empty for \App\WebSocket\Client\Rob in /data/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php:89
+Stack trace:
+#0 /data/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"rob",...', Object(Swoole\WebSocket\Frame))
+#1 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#2 /data/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object(Closure), Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#3 {main}
+  thrown in /data/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php on line 89
+[2020-02-16 18:14:42 $17727.0]	WARNING	swManager_check_exit_status: worker#0[pid=18196] abnormal exit, status=255, signal=0
+[2020-02-16 18:21:07 *18543.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to undefined method App\WebSocket\Cache\RoomCache::setLord() in /data/easyswoole/App/WebSocket/Service/RobService.php:53
+Stack trace:
+#0 /data/easyswoole/App/WebSocket/Client/Rob.php(45): App\WebSocket\Service\RobService->setLord('000103', Array)
+#1 /data/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Rob->state()
+#2 /data/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#3 /data/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"rob",...', Object(Swoole\WebSocket\Frame))
+#4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#5 /data/easyswoole/vendor/easys in /data/easyswoole/App/WebSocket/Service/RobService.php on line 53
+[2020-02-16 18:23:33 *18670.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Unsupported operand types in /data/easyswoole/App/WebSocket/Service/RobService.php:53
+Stack trace:
+#0 /data/easyswoole/App/WebSocket/Client/Rob.php(45): App\WebSocket\Service\RobService->setLord('000104', Array)
+#1 /data/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Rob->state()
+#2 /data/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#3 /data/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"rob",...', Object(Swoole\WebSocket\Frame))
+#4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#5 /data/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(1 in /data/easyswoole/App/WebSocket/Service/RobService.php on line 53
+[2020-02-16 18:25:52 *18812.1]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Unsupported operand types in /data/easyswoole/App/WebSocket/Service/RobService.php:54
+Stack trace:
+#0 /data/easyswoole/App/WebSocket/Client/Rob.php(45): App\WebSocket\Service\RobService->setLord('000105', Array)
+#1 /data/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Rob->state()
+#2 /data/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#3 /data/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"rob",...', Object(Swoole\WebSocket\Frame))
+#4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#5 /data/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(1 in /data/easyswoole/App/WebSocket/Service/RobService.php on line 54
+[2020-02-16 22:10:19 *30055.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught EasySwoole\Redis\Exception\RedisException: ERR Protocol error: invalid bulk length in /data/easyswoole/vendor/easyswoole/redis/src/Redis.php:2883
+Stack trace:
+#0 /data/easyswoole/vendor/easyswoole/redis/src/Redis.php(919): EasySwoole\Redis\Redis->recv()
+#1 /data/easyswoole/App/WebSocket/Cache/GameCache.php(66): EasySwoole\Redis\Redis->hGet('game:000114', Array)
+#2 [internal function]: App\WebSocket\Cache\GameCache->App\WebSocket\Cache\{closure}(Object(EasySwoole\Redis\Redis))
+#3 /data/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(345): call_user_func(Object(Closure), Object(EasySwoole\Redis\Redis))
+#4 /data/easyswoole/vendor/easyswoole/redis-pool/src/Redis.php(52): EasySwoole\Pool\AbstractPool->invoke(Object(Closure), NULL)
+#5 /data/easyswoole/App/WebSocket/Cache/GameCache.php(74): EasySwoole\RedisPool\Redis::invoke('redis', Object(Closure))
+#6 /data/easyswoole/App/WebSocket/Service/RobService.php(53): App\WebSocket\Cache\GameCache->setLord('000114', 1)
+#7 /data/easyswoole/App/WebSocket/Clie in /data/easyswoole/vendor/easyswoole/redis/src/Redis.php on line 2883
+[2020-02-16 22:10:19 $30053.0]	WARNING	swManager_check_exit_status: worker#0[pid=30055] abnormal exit, status=255, signal=0
+string(22) "shake success at fd :1"
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
