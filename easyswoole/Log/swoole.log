@@ -132,3 +132,35 @@ string(22) "shake success at fd :1"
 string(22) "shake success at fd :2"
 string(22) "shake success at fd :3"
 string(22) "shake success at fd :4"
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
+string(22) "shake success at fd :5"
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+string(22) "shake success at fd :8"
+string(22) "shake success at fd :9"
+string(23) "shake success at fd :10"
+string(23) "shake success at fd :11"
+string(23) "shake success at fd :12"
+string(23) "shake success at fd :13"
+string(23) "shake success at fd :14"
+string(23) "shake success at fd :15"
+[2020-02-19 16:17:43 #18344.1]	INFO	Server is shutdown now
+[2020-02-19 16:56:47 *6520.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught ArgumentCountError: Too few arguments to function EasySwoole\Redis\Redis::hIncrBy(), 2 passed in /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php on line 113 and exactly 3 expected in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php:1031
+Stack trace:
+#0 /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php(113): EasySwoole\Redis\Redis->hIncrBy('game:000135', 'turn')
+#1 [internal function]: App\WebSocket\Cache\GameCache->App\WebSocket\Cache\{closure}(Object(EasySwoole\Redis\Redis))
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(345): call_user_func(Object(Closure), Object(EasySwoole\Redis\Redis))
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/Redis.php(52): EasySwoole\Pool\AbstractPool->invoke(Object(Closure), NULL)
+#4 /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php(117): EasySwoole\RedisPool\Redis::invoke('redis', Object(Closure))
+#5 /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php(25): App\WebSocket\C in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php on line 1031
+[2020-02-19 16:56:47 $6518.0]	WARNING	swManager_check_exit_status: worker#0[pid=6520] abnormal exit, status=255, signal=0
+[2020-02-19 16:58:10 *6597.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Cannot use object of type stdClass as array in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php:48
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Play->play()
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#2 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
+#3 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object(Closure), Object(Swoole\WebSoc in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php on line 48
+[2020-02-19 16:58:10 $6595.0]	WARNING	swManager_check_exit_status: worker#0[pid=6597] abnormal exit, status=255, signal=0

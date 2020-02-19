@@ -7,12 +7,14 @@ cc.Class({
         cardPrefab:cc.Prefab,
         bottom:cc.Node,
         robUI:cc.Node,
+        playUI:cc.Node,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         this.robUI.active = false;
+        this.playUI.active = false;
         this.node.on('pushBottom',function(){
             var card = null;
             for(var i=0;i<3;i++)
@@ -41,6 +43,10 @@ cc.Class({
                 )
             );
         }.bind(this));
+
+        this.node.on('playTurn',function(){
+            this.playUI.active = true;
+        }.bind(this));
     },
 
     start () {
@@ -63,6 +69,27 @@ cc.Class({
                 cc.log(error);
         });
     },
+
+    onPlayCardClick:function(target,customData)
+    {
+        if(global.gameData.playCards.length == 0)
+            return ;
+        global.socket.requestPlayCard({
+            id:global.playerData.id,
+            token:global.playerData.token,
+            roomId:global.roomData.id,
+            push:customData,
+            card:global.gameData.playCards
+        },
+        (error,data)=>{
+            if(!error)
+            {
+                this.playUI.active = false;
+            }
+            else
+                cc.log(error);
+        });
+    }
 
     // update (dt) {},
 });

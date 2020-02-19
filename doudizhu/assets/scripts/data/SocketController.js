@@ -68,6 +68,10 @@ const SocketController = function(){
         sendData(data,'rob.state',cb);
     };
 
+    that.requestPlayCard = function(data,cb){
+        sendData(data,'play.play',cb);
+    };
+
     that.onPlayerJoin = function(cb){
         _event.on('room.otherJoin',cb);
     };
@@ -90,6 +94,10 @@ const SocketController = function(){
 
     that.onRobEnd = function(cb){
         _event.on('rob.end',cb);
+    };
+
+    that.onPlayTurn = function(cb){
+        _event.on('play.turn',cb);
     };
 
     return that;

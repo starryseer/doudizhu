@@ -38,6 +38,7 @@ cc.Class({
 
         global.socket.onGameStart((data)=>{
             global.roomData.state = 1;
+            global.gameData.playCards = [];
             var playerList = this.playerParent.children;
             for(var i=0;i<playerList.length;i++)
             {
@@ -75,7 +76,27 @@ cc.Class({
                 playerList[i].emit('robEnd',data[1]);
             }    
         });
-        
+
+        global.socket.onPlayTurn((data)=>{
+            this.gameUI.emit('playTurn',{});
+        });
+
+        cc.systemEvent.on('playCard',function(flag,value){
+            if(flag)
+            {
+                if(global.gameData.playCards.indexOf(value) == -1)
+                {
+                    global.gameData.playCards.push(value);
+                }
+            }
+            else
+            {
+                if(global.gameData.playCards.indexOf(value) != -1)
+                {
+                    global.gameData.playCards.splice(global.gameData.playCards.indexOf(value),1);
+                }
+            }
+        }.bind(this));
     },
 
     start () {

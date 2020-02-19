@@ -105,7 +105,6 @@ class Room extends Base
 
             $robUser = RobService::getInstance()->robUser($content['roomId']);
             $this->notifyFds($fds,$this->jsonReturn(201,['route'=>'rob.turn','user'=>$robUser]));
-
         }
 
     }

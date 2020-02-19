@@ -5158,3 +5158,27 @@ Stack trace:
 #5 /data/easyswoole/App/WebSocket/Cache/GameCache.php(74): EasySwoole\RedisPool\Redis::invoke('redis', Object(Closure))
 #6 /data/easyswoole/App/WebSocket/Service/RobService.php(53): App\WebSocket\Cache\GameCache->setLord('000114', 1)
 #7 /data/easyswoole/App/WebSocket/Clie at file:/data/easyswoole/vendor/easyswoole/redis/src/Redis.php line:2883]
+[2020-02-19 10:12:46][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php:63
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(63): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Core.php(114): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 3, '0.0.0.0', Array, 2, 1)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(54): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /data/doudizhu/easyswoole/easyswoole(24): EasySwoole\E at file:/data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php line:63]
+[2020-02-19 11:42:03][DEBUG][INFO] : [backTest:[{"id":"1","account":"1","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"1","create_at":"2020-02-07 11:06:14","update_at":"2020-02-07 11:06:28","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"2","account":"2","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"2","create_at":"2020-02-07 19:44:17","update_at":"2020-02-07 19:44:17","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"3","account":"3","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"3","create_at":"2020-02-10 20:28:04","update_at":"2020-02-10 20:28:04","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"}]]
+[2020-02-19 16:56:47][DEBUG][ERROR] : [Uncaught ArgumentCountError: Too few arguments to function EasySwoole\Redis\Redis::hIncrBy(), 2 passed in /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php on line 113 and exactly 3 expected in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php:1031
+Stack trace:
+#0 /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php(113): EasySwoole\Redis\Redis->hIncrBy('game:000135', 'turn')
+#1 [internal function]: App\WebSocket\Cache\GameCache->App\WebSocket\Cache\{closure}(Object(EasySwoole\Redis\Redis))
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(345): call_user_func(Object(Closure), Object(EasySwoole\Redis\Redis))
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/Redis.php(52): EasySwoole\Pool\AbstractPool->invoke(Object(Closure), NULL)
+#4 /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php(117): EasySwoole\RedisPool\Redis::invoke('redis', Object(Closure))
+#5 /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php(25): App\WebSocket\C at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php line:1031]
+[2020-02-19 16:58:10][DEBUG][ERROR] : [Uncaught Error: Cannot use object of type stdClass as array in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php:48
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Play->play()
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#2 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
+#3 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object(Closure), Object(Swoole\WebSoc at file:/data/doudizhu/easyswoole/App/WebSocket/Client/Play.php line:48]

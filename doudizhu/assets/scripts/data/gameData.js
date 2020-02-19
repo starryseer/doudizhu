@@ -6,6 +6,7 @@ const gameData = function(){
     that.bottom = null;
     that.state = 0;
     that.lord = null;
+    that.playCards = [];
     return that;
 };
 export default gameData;

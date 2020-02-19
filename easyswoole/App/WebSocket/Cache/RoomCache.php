@@ -150,7 +150,7 @@ class RoomCache
     {
         return Redis::invoke('redis', function ($redis)use($roomId,$p) {
             $keyName = self::$key.":".$roomId;
-            return json_decode($redis->hget($keyName,'p'.$p));
+            return json_decode($redis->hget($keyName,'p'.$p),true);
         });
     }
 }

@@ -33,6 +33,7 @@ class GameCache
                 'bottom' => json_encode($cards[3],true),
                 'rob'=>json_encode($rob,true),
                 'lord'=>'',
+                'turn'=>'',
                 'state'=> 0,
             ];
             $redis->hMset($keyName,$info);
@@ -68,6 +69,7 @@ class GameCache
             $redis->hMset($keyName,[
                 'c'.$lord=>json_encode($cards,true),
                 'lord'=>$lord,
+                'turn'=>$lord,
                 'state'=>1
             ]);
             return true;
@@ -87,6 +89,31 @@ class GameCache
         return Redis::invoke('redis', function ($redis)use($roomId,$p) {
             $keyName = self::$key.":".$roomId;
             return json_decode($redis->hget($keyName,'c'.$p),true);
+        });
+    }
+
+    public function isTurn($roomId,$p)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId,$p) {
+            $keyName = self::$key.":".$roomId;
+            $seat = $redis->hget($keyName,'turn')%3;
+            if($seat ==0)
+                $seat = 3;
+            if($seat == $p)
+                return true;
+            else
+                return false;
+        });
+    }
+
+    public function nextPlayer($roomId)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId) {
+            $keyName = self::$key.":".$roomId;
+            $turn = $redis->hincrby($keyName,'turn',1)%3;
+            if($turn == 0)
+                $turn =3;
+            return $turn;
         });
     }
 }
