@@ -5182,3 +5182,18 @@ Stack trace:
 #2 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
 #3 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
 #4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object(Closure), Object(Swoole\WebSoc at file:/data/doudizhu/easyswoole/App/WebSocket/Client/Play.php line:48]
+[2020-02-21 10:28:07][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:28:07][DEBUG][WARNING] : [json_decode() expects parameter 1 to be string, array given at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:28:07][DEBUG][ERROR] : [Uncaught Error: Class 'App\WebSocket\Service\Card' not found in /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php:46
+Stack trace:
+#0 /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php(60): App\WebSocket\Service\PlayService->removeCard('000171', 1, Array)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Play->play()
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#3 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
+#4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame)) at file:/data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php line:46]
+[2020-02-21 10:31:32][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:31:58][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:32:24][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:40:02][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:45:12][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]
+[2020-02-21 10:46:41][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php line:124]

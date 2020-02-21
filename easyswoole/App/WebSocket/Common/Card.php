@@ -51,4 +51,18 @@ class Card
         return $cards1;
     }
 
+    public static function sortCard($cards)
+    {
+        $point = Config::getInstance()->getConf('card')['point'];
+        $pos = [];
+        foreach ($cards as $key => $card)
+        {
+            $pos[$point[$card]] = $card;
+        }
+
+        krsort($pos);
+        $card = array_values($pos);
+        return $card;
+    }
+
 }

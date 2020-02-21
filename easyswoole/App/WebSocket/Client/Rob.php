@@ -57,7 +57,6 @@ class Rob extends Base
             $lordFd = $fds[$lord];
 
             Timer::getInstance()->after(2000,function()use($lordFd){
-                var_dump('in');
                 $this->notifyFd($lordFd, $this->jsonReturn(201, ['route' => 'play.turn']));
             });
 

@@ -84,10 +84,19 @@ cc.Class({
         (error,data)=>{
             if(!error)
             {
+                if(data.push == 0)
+                {
+                    cc.systemEvent.emit('resetSelfPlayCard',{});
+                    return;
+                }
                 this.playUI.active = false;
+                if(global.gameData.playCards.length != 0)
+                    cc.systemEvent.emit('selfPlayCard',data);
             }
             else
-                cc.log(error);
+            {
+                cc.systemEvent.emit('resetSelfPlayCard',{});
+            }
         });
     }
 

@@ -116,4 +116,13 @@ class GameCache
             return $turn;
         });
     }
+
+    public function setCard($roomId,$p,$card)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId,$p,$card) {
+            $keyName = self::$key.":".$roomId;
+            $redis->hset($keyName,'c'.$p,json_encode($card,true));
+            return true;
+        });
+    }
 }

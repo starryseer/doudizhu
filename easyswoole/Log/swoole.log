@@ -164,3 +164,11 @@ Stack trace:
 #3 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
 #4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object(Closure), Object(Swoole\WebSoc in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php on line 48
 [2020-02-19 16:58:10 $6595.0]	WARNING	swManager_check_exit_status: worker#0[pid=6597] abnormal exit, status=255, signal=0
+[2020-02-21 10:28:07 *6462.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Class 'App\WebSocket\Service\Card' not found in /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php:46
+Stack trace:
+#0 /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php(60): App\WebSocket\Service\PlayService->removeCard('000171', 1, Array)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Play->play()
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#3 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
+#4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame)) in /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php on line 46
+[2020-02-21 10:28:07 $6460.0]	WARNING	swManager_check_exit_status: worker#0[pid=6462] abnormal exit, status=255, signal=0

@@ -100,6 +100,10 @@ const SocketController = function(){
         _event.on('play.turn',cb);
     };
 
+    that.onOtherPlay = function(cb){
+        _event.on('play.otherPlay',cb);
+    };
+
     return that;
 };
 export default SocketController;

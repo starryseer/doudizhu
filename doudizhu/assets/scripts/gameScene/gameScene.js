@@ -79,22 +79,37 @@ cc.Class({
 
         global.socket.onPlayTurn((data)=>{
             this.gameUI.emit('playTurn',{});
+            var playerList = this.playerParent.children;
+            for(var i=0;i<playerList.length;i++)
+            {
+                playerList[i].emit('unPlayCard',{});
+            }
         });
 
-        cc.systemEvent.on('playCard',function(flag,value){
-            if(flag)
+        global.socket.onOtherPlay((data)=>{
+            cc.log('in');
+            cc.log(data);
+            if(data[1].push == 0)
             {
-                if(global.gameData.playCards.indexOf(value) == -1)
-                {
-                    global.gameData.playCards.push(value);
-                }
+                return;
             }
             else
             {
-                if(global.gameData.playCards.indexOf(value) != -1)
+                global.gameData['c'+data[1].p].splice(0,data[1].card.length);
+                var playerList = this.playerParent.children;
+                for(var i=0;i<playerList.length;i++)
                 {
-                    global.gameData.playCards.splice(global.gameData.playCards.indexOf(value),1);
+                    playerList[i].emit('otherPlay',data[1]);
                 }
+            }
+
+        });
+
+        cc.systemEvent.on('selfPlayCard',function(data){
+            var playerList = this.playerParent.children;
+            for(var i=0;i<playerList.length;i++)
+            {
+                playerList[i].emit('selfPlayerCard',data);
             }
         }.bind(this));
     },
@@ -136,19 +151,19 @@ cc.Class({
         switch(global.playerData.p)
         {
             case 1:
-                this.playPos[1] = [playerPosition[0].getPosition(),cc.v2(150,0)];
-                this.playPos[2] = [playerPosition[1].getPosition(),cc.v2(150,0)];
-                this.playPos[3] = [playerPosition[2].getPosition(),cc.v2(-150,0)];
+                this.playPos[1] = [playerPosition[0].getPosition(),cc.v2(150,0),cc.v2(550,150)];
+                this.playPos[2] = [playerPosition[1].getPosition(),cc.v2(150,0),cc.v2(300,0)];
+                this.playPos[3] = [playerPosition[2].getPosition(),cc.v2(-150,0),cc.v2(-300,0)];
                 break;
             case 2:
-                this.playPos[2] = [playerPosition[0].getPosition(),cc.v2(150,0)];
-                this.playPos[3] = [playerPosition[1].getPosition(),cc.v2(150,0)];
-                this.playPos[1] = [playerPosition[2].getPosition(),cc.v2(-150,0)];
+                this.playPos[2] = [playerPosition[0].getPosition(),cc.v2(150,0),cc.v2(550,150)];
+                this.playPos[3] = [playerPosition[1].getPosition(),cc.v2(150,0),cc.v2(300,0)];
+                this.playPos[1] = [playerPosition[2].getPosition(),cc.v2(-150,0),cc.v2(-300,0)];
                 break;
             case 3:
-                this.playPos[3] = [playerPosition[0].getPosition(),cc.v2(150,0)];
-                this.playPos[1] = [playerPosition[1].getPosition(),cc.v2(150,0)];
-                this.playPos[2] = [playerPosition[2].getPosition(),cc.v2(-150,0)];
+                this.playPos[3] = [playerPosition[0].getPosition(),cc.v2(150,0),cc.v2(550,150)];
+                this.playPos[1] = [playerPosition[1].getPosition(),cc.v2(150,0),cc.v2(300,0)];
+                this.playPos[2] = [playerPosition[2].getPosition(),cc.v2(-150,0),cc.v2(-300,0)];
                 break;
         }
     },

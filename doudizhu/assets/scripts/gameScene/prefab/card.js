@@ -1,3 +1,4 @@
+import global from "../../global";
 cc.Class({
     extends: cc.Component,
 
@@ -14,9 +15,14 @@ cc.Class({
         this.node.on('init',function(card){
             this.value = card;
             this.node.getComponent(cc.Sprite).spriteFrame = this.cardAtlas.getSpriteFrame(defines.cardFrame[card]);
+            this.node.on(cc.Node.EventType.TOUCH_START,this.touchBegin,this);
         }.bind(this));
 
-        this.node.on(cc.Node.EventType.TOUCH_START,this.touchBegin,this);
+        this.node.on('untouch',function(){
+            this.node.off(cc.Node.EventType.TOUCH_START,this.touchBegin,this);
+        }.bind(this));
+
+        
     },
     start () {
 
@@ -27,13 +33,20 @@ cc.Class({
         {
             this.node.y-=20;
             this.flag=0;
+            if(global.gameData.playCards.indexOf(this.value) != -1)
+            {
+                global.gameData.playCards.splice(global.gameData.playCards.indexOf(this.value),1);
+            }
         }
         else
         {
             this.node.y+=20;
             this.flag=1;
+            if(global.gameData.playCards.indexOf(this.value) == -1)
+            {
+                global.gameData.playCards.push(this.value);
+            }
         }
-        cc.systemEvent.emit('playCard',this.flag,this.value);
     }
 
     // update (dt) {},
