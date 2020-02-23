@@ -72,7 +72,7 @@ cc.Class({
 
     onPlayCardClick:function(target,customData)
     {
-        if(global.gameData.playCards.length == 0)
+        if(global.gameData.playCards.length == 0 && customData == 1)
             return ;
         global.socket.requestPlayCard({
             id:global.playerData.id,
@@ -84,12 +84,12 @@ cc.Class({
         (error,data)=>{
             if(!error)
             {
+                this.playUI.active = false;
                 if(data.push == 0)
                 {
                     cc.systemEvent.emit('resetSelfPlayCard',{});
                     return;
                 }
-                this.playUI.active = false;
                 if(global.gameData.playCards.length != 0)
                     cc.systemEvent.emit('selfPlayCard',data);
             }

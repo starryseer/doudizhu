@@ -11,6 +11,7 @@ namespace App\WebSocket\Client;
 use App\WebSocket\Service\RoomService;
 use App\WebSocket\Service\UserService;
 use App\WebSocket\Service\PlayService;
+use App\WebSocket\Common\Card;
 
 class Play extends Base
 {
@@ -42,27 +43,53 @@ class Play extends Base
             $this->response()->setMessage($this->jsonReturn(50003, [], '其他玩家出牌中', $content['callBackIndex']));
             return;
         }
+        $lastCard = $playService->lastCard($content['roomId']);
+        var_dump($lastCard);
+        if(empty($lastCard) and !$content['push'])
+        {
+            $this->response()->setMessage($this->jsonReturn(50004, [], '必须出牌', $content['callBackIndex']));
+            return;
+        }
+
+
 
         $otherFds = RoomService::getInstance()->getOtherFds($user['id'],$content['roomId']);
         if(!$content['push'])
         {
+            $playService->setLastCard($content['roomId'],[]);
             $this->response()->setMessage($this->jsonReturn(200, ['route' => 'play.play','push'=>0,'card'=>[]], '', $content['callBackIndex']));
-            $this->notifyFds($otherFds,['route' => 'play.otherPlay','push'=>0,'card'=>[]]);
+            $this->notifyFds($otherFds,$this->jsonReturn(['route' => 'play.otherPlay','push'=>0,'card'=>[]]));
+            $user = $playService->nextPlayer($content['roomId']);
+            $this->notifyFd($user['fd'], $this->jsonReturn(201, ['route' => 'play.turn']));
             return ;
         }
 
         if(!$playService->hasCard($content['roomId'],$user['p'],$content['card']))
         {
-            $this->response()->setMessage($this->jsonReturn(50004, [], '卡牌错误', $content['callBackIndex']));
+            $this->response()->setMessage($this->jsonReturn(50005, [], '卡牌错误', $content['callBackIndex']));
+            return;
+        }
+
+        if(max(array_count_values($content['card'])) >=2 or empty($thisCard = Card::cardType($content['card'])))
+        {
+            $this->response()->setMessage($this->jsonReturn(50006, [], '牌型错误', $content['callBackIndex']));
+            return;
+        }
+        var_dump($thisCard);
+
+        if(!empty($lastCard) and !Card::compare($thisCard,$lastCard))
+        {
+            $this->response()->setMessage($this->jsonReturn(50007, [], '牌大小不足', $content['callBackIndex']));
             return;
         }
 
         if(empty($cards = $playService->removeCard($content['roomId'],$user['p'],$content['card'])))
         {
-            $this->response()->setMessage($this->jsonReturn(50004, [], '卡牌移除失败', $content['callBackIndex']));
+            $this->response()->setMessage($this->jsonReturn(50008, [], '卡牌移除失败', $content['callBackIndex']));
             return;
         }
 
+        $playService->setLastCard($content['roomId'],$thisCard);
         $this->response()->setMessage($this->jsonReturn(200, ['route' => 'play.play','push'=>1,'card'=>$cards], '', $content['callBackIndex']));
 
         $this->notifyFds($otherFds,$this->jsonReturn(201,['route' => 'play.otherPlay','push'=>1,'card'=>$cards,'p'=>$user['p']]));

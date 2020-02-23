@@ -46,4 +46,27 @@ class PlayService
             return [];
         return Card::sortCard($card);
     }
+
+    public function lastCard($roomId)
+    {
+        $lastCards = GameCache::getInstance()->lastCards($roomId);
+        $lastCard = [];
+        for($i=1;$i>=0;$i--)
+        {
+            if(!empty($lastCards[$i]))
+            {
+                $lastCard = $lastCards[$i];
+                break;
+            }
+        }
+        return $lastCard;
+    }
+
+    public function setLastCard($roomId,$cards)
+    {
+        $lastCards = GameCache::getInstance()->lastCards($roomId);
+        array_pop($lastCards);
+        array_unshift($lastCards,$cards);
+        return GameCache::getInstance()->setLastCards($roomId,$lastCards);
+    }
 }

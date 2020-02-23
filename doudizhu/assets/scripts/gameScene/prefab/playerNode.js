@@ -166,8 +166,6 @@ cc.Class({
             if(this.id != global.playerData.id)
                 return;
 
-            cc.log('inself');
-            cc.log(data);
             var playCards = data.card;
             global.gameData.playCards = [];
             for(var k = 0;k<playCards.length;k++)
@@ -177,9 +175,7 @@ cc.Class({
                     global.gameData['c'+this.p].splice(global.gameData['c'+this.p].indexOf(playCards[k]),1);
                 }
             }
-            cc.log(global.gameData['c'+this.p]);
-            
-
+        
             var cards = this.cardParent.children;
             var index = 0;
             for(var i=0;i<cards.length;i++)
@@ -218,14 +214,13 @@ cc.Class({
             
         }.bind(this));
 
-        this.node.on('resetSelfPlayerCard',function(){
+        cc.systemEvent.on('resetSelfPlayCard',function(){
             if(this.id != global.playerData.id)
                 return;
-                
             var cards = this.cardParent.children;
             for(var i=0;i<cards.length;i++)
             {
-                if(cards[i].getComponent('card').flag)
+                if(cards[i].getComponent('card').flag == 1)
                 {
                     cards[i].getComponent('card').flag = 0;
                     cards[i].y-=20;
@@ -238,9 +233,10 @@ cc.Class({
             if(this.p != data.p)
                 return;
                 
+            this.cardPlayNode.destroyAllChildren();    
             var cards = this.cardParent.children;
             var len = cards.length;
-            for(var i=len-1;i>=(len -1 - data.card.length);i--)
+            for(var i=len-1;i>(len -1 - data.card.length);i--)
             {
                 cards[i].destroy();
             }

@@ -172,3 +172,35 @@ Stack trace:
 #3 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
 #4 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame)) in /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php on line 46
 [2020-02-21 10:28:07 $6460.0]	WARNING	swManager_check_exit_status: worker#0[pid=6462] abnormal exit, status=255, signal=0
+[2020-02-22 16:49:22 *2786.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-22 16:49:22 $2784.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-22 16:49:22 $2784.0]	WARNING	swManager_check_exit_status: worker#1[pid=2787] abnormal exit, status=0, signal=1
+[2020-02-22 16:49:22 #2783.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-23 09:02:42 *2786.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2020-02-23 09:03:07 *21355.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2020-02-23 11:30:38 *21378.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2020-02-23 11:31:08 #2783.1]	INFO	Server is shutdown now
+[2020-02-23 14:26:16 *5125.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to undefined function App\WebSocket\Cache\json_deocde() in /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php:134
+Stack trace:
+#0 [internal function]: App\WebSocket\Cache\GameCache->App\WebSocket\Cache\{closure}(Object(EasySwoole\Redis\Redis))
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(345): call_user_func(Object(Closure), Object(EasySwoole\Redis\Redis))
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/Redis.php(52): EasySwoole\Pool\AbstractPool->invoke(Object(Closure), NULL)
+#3 /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php(135): EasySwoole\RedisPool\Redis::invoke('redis', Object(Closure))
+#4 /data/doudizhu/easyswoole/App/WebSocket/Service/PlayService.php(52): App\WebSocket\Cache\GameCache->lastCards('000212')
+#5 /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php(46): App\WebSocket\Service\PlayService->lastCard('000212')
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): Ap in /data/doudizhu/easyswoole/App/WebSocket/Cache/GameCache.php on line 134
+[2020-02-23 14:26:16 $5123.0]	WARNING	swManager_check_exit_status: worker#0[pid=5125] abnormal exit, status=255, signal=0
+[2020-02-23 14:45:18 *6137.0]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to undefined method App\WebSocket\Service\PlayService::setThisCard() in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php:56
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/AbstractInterface/Controller.php(124): App\WebSocket\Client\Play->play()
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/socket/src/Dispatcher.php(82): EasySwoole\Socket\AbstractInterface\Controller->__hook(Object(Swoole\WebSocket\Server), Object(EasySwoole\Socket\Config), Object(EasySwoole\Socket\Bean\Caller), Object(EasySwoole\Socket\Bean\Response))
+#2 /data/doudizhu/easyswoole/EasySwooleEvent.php(77): EasySwoole\Socket\Dispatcher->dispatch(Object(Swoole\WebSocket\Server), '{"class":"play"...', Object(Swoole\WebSocket\Frame))
+#3 [internal function]: EasySwoole\EasySwoole\EasySwooleEvent::EasySwoole\EasySwoole\{closure}(Object(Swoole\WebSocket\Server), Object(Swoole\WebSocket\Frame))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(134): call_user_func(Object( in /data/doudizhu/easyswoole/App/WebSocket/Client/Play.php on line 56
+[2020-02-23 14:45:19 $6135.0]	WARNING	swManager_check_exit_status: worker#0[pid=6137] abnormal exit, status=255, signal=0
+[2020-02-23 15:59:48 $8494.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-23 15:59:48 $8494.0]	WARNING	swManager_check_exit_status: worker#1[pid=8497] abnormal exit, status=0, signal=1
+[2020-02-23 15:59:48 #8493.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-23 15:59:48 *8496.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-23 20:23:45 *8496.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2020-02-23 20:26:48 *23610.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()

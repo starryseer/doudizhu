@@ -10,7 +10,7 @@ class GameCache
     use \EasySwoole\Component\CoroutineSingleTon;
 
     private static $key = 'game';
-    private static $value = ['id'=>0,'c1'=>'','c2'=>'','c3'=>'','state'=>0,'num'=>0,'times'=>0];
+    private static $value = ['id'=>0,'c1'=>'','c2'=>'','c3'=>'','bottom'=>'','rob'=>'','lord'=>'','turn'=>'','lastCards'=>'','state'=>0,'num'=>0,'times'=>0];
 
     public function init($roomId)
     {
@@ -35,6 +35,7 @@ class GameCache
                 'lord'=>'',
                 'turn'=>'',
                 'state'=> 0,
+                'lastCards'=>json_encode([[],[]],true)
             ];
             $redis->hMset($keyName,$info);
             $redis->expire($keyName,86400);
@@ -123,6 +124,22 @@ class GameCache
             $keyName = self::$key.":".$roomId;
             $redis->hset($keyName,'c'.$p,json_encode($card,true));
             return true;
+        });
+    }
+
+    public function lastCards($roomId)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId) {
+            $keyName = self::$key.":".$roomId;
+            return json_decode($redis->hget($keyName,'lastCards'),true);
+        });
+    }
+
+    public function setLastCards($roomId,$lastCards)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId,$lastCards) {
+            $keyName = self::$key.":".$roomId;
+            return $redis->hset($keyName,'lastCards',json_encode($lastCards,true));
         });
     }
 }

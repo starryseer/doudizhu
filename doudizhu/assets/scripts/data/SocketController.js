@@ -25,7 +25,7 @@ const SocketController = function(){
         else if(jsonData.code == 201)
             _event.fire(jsonData.data.route,jsonData.data);
         else
-            cb(jsonData.mess);
+            cb(jsonData.message);
     };
     socket.onclose = function(event){
         cc.log("server close");
