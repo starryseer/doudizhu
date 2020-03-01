@@ -5255,3 +5255,54 @@ Stack trace:
 [2020-02-23 14:54:37][DEBUG][NOTICE] : [Undefined index:  at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:280]
 [2020-02-23 14:54:37][DEBUG][NOTICE] : [Undefined offset: 1 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:280]
 [2020-02-23 14:54:37][DEBUG][NOTICE] : [Undefined index:  at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:280]
+[2020-02-23 20:31:41][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php:63
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(63): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Core.php(114): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 3, '0.0.0.0', Array, 2, 1)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(54): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /data/doudizhu/easyswoole/easyswoole(24): EasySwoole\E at file:/data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php line:63]
+[2020-02-24 06:23:58][DEBUG][INFO] : [backTest:[{"id":"1","account":"1","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"1","create_at":"2020-02-07 11:06:14","update_at":"2020-02-07 11:06:28","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"2","account":"2","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"2","create_at":"2020-02-07 19:44:17","update_at":"2020-02-07 19:44:17","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"3","account":"3","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"3","create_at":"2020-02-10 20:28:04","update_at":"2020-02-10 20:28:04","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"}]]
+[2020-02-26 17:20:01][DEBUG][NOTICE] : [Non-static method App\WebSocket\Service\PlayService::lastCard() should not be called statically at file:/data/doudizhu/easyswoole/App/WebSocket/Client/Rob.php line:61]
+[2020-02-26 17:22:21][DEBUG][NOTICE] : [Non-static method App\WebSocket\Service\PlayService::lastCard() should not be called statically at file:/data/doudizhu/easyswoole/App/WebSocket/Client/Rob.php line:61]
+[2020-02-28 14:14:28][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php:63
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(63): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Core.php(114): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 3, '0.0.0.0', Array, 2, 1)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(54): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /data/doudizhu/easyswoole/easyswoole(24): EasySwoole\E at file:/data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php line:63]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 5 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 13 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 12 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 11 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 8 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 7 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 6 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 3 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 1 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:26:27][DEBUG][NOTICE] : [Undefined offset: 4 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:30:16][DEBUG][NOTICE] : [Undefined offset: 12 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:30:16][DEBUG][NOTICE] : [Undefined offset: 13 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:30:16][DEBUG][NOTICE] : [Undefined offset: 11 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:545]
+[2020-03-01 15:51:38][DEBUG][INFO] : [backTest:[{"id":"1","account":"1","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"1","create_at":"2020-02-07 11:06:14","update_at":"2020-02-07 11:06:28","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"2","account":"2","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"2","create_at":"2020-02-07 19:44:17","update_at":"2020-02-07 19:44:17","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"3","account":"3","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"3","create_at":"2020-02-10 20:28:04","update_at":"2020-02-10 20:28:04","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"}]]
+[2020-03-01 17:05:05][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 17:05:05][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 17:05:05][DEBUG][WARNING] : [shuffle() expects parameter 1 to be array, null given at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:14]
+[2020-03-01 17:05:05][DEBUG][WARNING] : [array_chunk() expects parameter 1 to be array, null given at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:15]
+[2020-03-01 17:05:05][DEBUG][WARNING] : [Invalid argument supplied for foreach() at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:17]
+[2020-03-01 17:05:05][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 17:11:37][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 17:11:37][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 17:11:37][DEBUG][WARNING] : [shuffle() expects parameter 1 to be array, null given at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:14]
+[2020-03-01 17:11:37][DEBUG][WARNING] : [array_chunk() expects parameter 1 to be array, null given at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:15]
+[2020-03-01 17:11:37][DEBUG][WARNING] : [Invalid argument supplied for foreach() at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:17]
+[2020-03-01 17:11:37][DEBUG][NOTICE] : [unserialize(): Error at offset 2048 of 2048 bytes at file:/data/doudizhu/easyswoole/vendor/easyswoole/config/src/TableConfig.php line:47]
+[2020-03-01 18:15:46][DEBUG][NOTICE] : [Undefined offset: 10 at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]

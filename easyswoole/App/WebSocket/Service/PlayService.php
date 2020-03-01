@@ -8,6 +8,7 @@
 
 namespace App\WebSocket\Service;
 
+use App\WebSocket\Service\GameService;
 use App\WebSocket\Cache\GameCache;
 use App\WebSocket\Cache\RoomCache;
 use App\WebSocket\Common\Card;
@@ -51,11 +52,11 @@ class PlayService
     {
         $lastCards = GameCache::getInstance()->lastCards($roomId);
         $lastCard = [];
-        for($i=1;$i>=0;$i--)
+        foreach($lastCards as $lastC)
         {
-            if(!empty($lastCards[$i]))
+            if(!empty($lastC))
             {
-                $lastCard = $lastCards[$i];
+                $lastCard = $lastC;
                 break;
             }
         }
@@ -68,5 +69,12 @@ class PlayService
         array_pop($lastCards);
         array_unshift($lastCards,$cards);
         return GameCache::getInstance()->setLastCards($roomId,$lastCards);
+    }
+
+    public function tipCard($roomId,$p)
+    {
+        $lastCard = $this->lastCard($roomId);
+        $card = GameService::getInstance()->cardsBySeat($roomId,$p);
+        return Card::tipCard($card,$lastCard);
     }
 }

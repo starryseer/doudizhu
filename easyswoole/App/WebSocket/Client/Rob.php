@@ -7,6 +7,7 @@ use App\WebSocket\Service\GameService;
 use App\WebSocket\Service\RobService;
 use App\WebSocket\Service\RoomService;
 use App\WebSocket\Service\UserService;
+use App\WebSocket\Service\PlayService;
 use EasySwoole\Component\Timer;
 
 class Rob extends Base
@@ -56,8 +57,10 @@ class Rob extends Base
             }
             $lordFd = $fds[$lord];
 
-            Timer::getInstance()->after(2000,function()use($lordFd){
-                $this->notifyFd($lordFd, $this->jsonReturn(201, ['route' => 'play.turn']));
+            $tipCard = PlayService::getInstance()->tipCard($content['roomId'],$lord);
+
+            Timer::getInstance()->after(2000,function()use($lordFd,$tipCard){
+                $this->notifyFd($lordFd, $this->jsonReturn(201, ['route' => 'play.turn','tipCard'=>$tipCard]));
             });
 
             return;

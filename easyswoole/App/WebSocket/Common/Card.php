@@ -44,6 +44,11 @@ class Card
                 break;
         }
 
+        while(count($pos) <3)
+        {
+            $pos[] = count($pos) + 17;
+        }
+
         foreach ($pos as $key => $p)
         {
             array_splice($cards1,$p,0,$cards2[$key]);
@@ -507,5 +512,375 @@ class Card
 
         return false;
     }
+
+    public static function tipCard($card,$lastCard)
+    {
+        if(empty($lastCard))
+        {
+            $tipCard = static::tipSingle($card,['type'=>'single','value'=>0]);
+            $tipCard = array_values($tipCard);
+            return $tipCard;
+        }
+
+        switch($lastCard['type'])
+        {
+            case 'single':
+                $tipCard1 =  array_values(static::tipSingle($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'pair':
+                $tipCard1 =  array_values(static::tipPair($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'triple':
+                $tipCard1 =  array_values(static::tipTriple($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'bomb':
+                $tipCard =  static::tipBomb($card,$lastCard);
+                $tipCard = array_values($tipCard);
+                return $tipCard;
+            case 'threeOne':
+                $tipCard1 =  array_values(static::tipThreeOne($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'threePair':
+                $tipCard1 =  array_values(static::tipThreePair($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'fourTwo':
+                $tipCard1 =  array_values(static::tipFourTwo($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'fourPair':
+                $tipCard1 =  array_values(static::tipFourPair($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'flight':
+                $tipCard1 =  array_values(static::tipFlight($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'flightTwo':
+                $tipCard1 =  array_values(static::tipFlightTwo($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'flightPair':
+                $tipCard1 =  array_values(static::tipFlightPair($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'straight':
+                $tipCard1 =  array_values(static::tipStraight($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            case 'company':
+                $tipCard1 =  array_values(static::tipCompany($card,$lastCard));
+                $tipCard2 = array_values(static::tipBomb($card,$lastCard));
+                $tipCard = array_values(array_merge($tipCard1,$tipCard2));
+                return $tipCard;
+            default:
+                break;
+        }
+    }
+
+    public static function tipSingle($card,$lastCard)
+    {
+        $valueTimes = static::cardValueTimes($card);
+        $tipCard = static::tipSameCompare($valueTimes,$card,$lastCard['value'],1);
+        return $tipCard;
+    }
+
+    public static function tipPair($card,$lastCard)
+    {
+        $valueTimes = static::cardValueTimes($card);
+        $tipCard = static::tipSameCompare($valueTimes,$card,$lastCard['value'],2);
+        return $tipCard;
+    }
+
+    public static function tipTriple($card,$lastCard)
+    {
+        $valueTimes = static::cardValueTimes($card);
+        $tipCard = static::tipSameCompare($valueTimes,$card,$lastCard['value'],3);
+        return $tipCard;
+    }
+
+    public static function tipBomb($card,$lastCard)
+    {
+        $valueTimes = static::cardValueTimes($card);
+        if($lastCard['type'] == 'bomb')
+            $tipCard = static::tipSameCompare($valueTimes,$card,$lastCard['value'],4);
+        else
+            $tipCard = static::tipSameCompare($valueTimes,$card,0,4);
+        $tipBomb = static::tipKingBomb($card);
+        if(!empty($tipBomb))
+            $tipCard[] = $tipBomb;
+        return $tipCard;
+    }
+
+    public static function tipThreeOne($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $three = static::tipSameCompare($valueTimes,$card,$lastCard['value'],3);
+        $one = static::tipSameCompare($valueTimes,$card,0,1);
+        foreach($three as $threeValue => $threeC)
+        {
+            foreach($one as $oneValue => $oneC)
+            {
+                if($threeValue !== $oneValue)
+                {
+                    $tipCard[$threeValue] = array_values(array_merge($three[$threeValue],$one[$oneValue]));
+                    break;
+                }
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipThreePair($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $three = static::tipSameCompare($valueTimes,$card,$lastCard['value'],3);
+        $pair = static::tipSameCompare($valueTimes,$card,0,2);
+        foreach($three as $threeValue => $threeC)
+        {
+            foreach($pair as $pairValue => $pairC)
+            {
+                if($threeValue !== $pairValue)
+                {
+                    $tipCard[$threeValue] = array_values(array_merge($three[$threeValue],$pair[$pairValue]));
+                    break;
+                }
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipFourTwo($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $four = static::tipSameCompare($valueTimes,$card,$lastCard['value'],4);
+        $one = static::tipSameCompare($valueTimes,$card,0,1);
+        foreach($four as $fourValue => $fourC)
+        {
+            $ones = [];
+            foreach($one as $oneValue => $oneC)
+            {
+                if($fourValue !== $oneValue)
+                {
+                    $ones = array_values(array_merge($ones,$oneC));
+                }
+                if(count($ones) == 2)
+                {
+                    $tipCard[$fourValue] = array_values(array_merge($four[$fourValue],$ones));
+                    break;
+                }
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipFourPair($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $four = static::tipSameCompare($valueTimes,$card,$lastCard['value'],4);
+        $pair = static::tipSameCompare($valueTimes,$card,0,2);
+        foreach($four as $fourValue => $fourC)
+        {
+            $ones = [];
+            foreach($pair as $pairValue => $pairC)
+            {
+                if($fourValue !== $pairValue)
+                {
+                    $ones = array_values(array_merge($ones,$pairC));
+                }
+                if(count($ones) == 4)
+                {
+                    $tipCard[$fourValue] = array_values(array_merge($four[$fourValue],$ones));
+                    break;
+                }
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipKingBomb($card)
+    {
+        $king =  array_intersect($card,['M0','M1']);
+        if(count($king) == 2)
+            return $king;
+        else
+            return [];
+    }
+
+    public static function tipFlight($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $three = static::tipSameCompare($valueTimes,$card,$lastCard['value']-1,3,true);
+        $threeValues = array_keys($three);
+        foreach($three as $threeValue => $threeC)
+        {
+            if(in_array($threeValue-1,$threeValues))
+                $tipCard[$threeValue] = array_values(array_merge($threeC,$three[$threeValue -1]));
+        }
+        return $tipCard;
+    }
+
+    public static function tipFlightTwo($card,$lastCard)
+    {
+        $tipCard = [];
+        $flight = [];
+        $valueTimes = static::cardValueTimes($card);
+        $three = static::tipSameCompare($valueTimes,$card,$lastCard['value']-1,3,true);
+        $one = static::tipSameCompare($valueTimes,$card,0,1);
+        $threeValues = array_keys($three);
+        foreach($three as $threeValue => $threeC)
+        {
+            if(in_array($threeValue-1,$threeValues))
+            {
+                $flight[$threeValue] = array_values(array_merge($threeC,$three[$threeValue -1]));
+                $ones = [];
+                foreach($one as $oneValue => $oneC)
+                {
+
+                    if(!in_array($oneValue,[$threeValue,$threeValue-1]))
+                    {
+                        $ones = array_values(array_merge($ones,$oneC));
+                    }
+                    if(count($ones) == 2)
+                    {
+                        $tipCard[$threeValue] = array_values(array_merge($flight[$threeValue],$ones));
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        return $tipCard;
+    }
+
+    public static function tipFlightPair($card,$lastCard)
+    {
+        $tipCard = [];
+        $flight = [];
+        $valueTimes = static::cardValueTimes($card);
+        $three = static::tipSameCompare($valueTimes,$card,$lastCard['value']-1,3,true);
+        $one = static::tipSameCompare($valueTimes,$card,0,2);
+        $threeValues = array_keys($three);
+        foreach($three as $threeValue => $threeC)
+        {
+            if(in_array($threeValue-1,$threeValues))
+            {
+                $flight[$threeValue] = array_values(array_merge($threeC,$three[$threeValue -1]));
+                $ones = [];
+                foreach($one as $oneValue => $oneC)
+                {
+
+                    if(!in_array($oneValue,[$threeValue,$threeValue-1]))
+                    {
+                        $ones = array_values(array_merge($ones,$oneC));
+                    }
+                    if(count($ones) == 4)
+                    {
+                        $tipCard[$threeValue] = array_values(array_merge($flight[$threeValue],$ones));
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        return $tipCard;
+    }
+
+    public static function tipStraight($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $one = static::tipSameCompare($valueTimes,$card,$lastCard['value']-$lastCard['length']+1,1,true);
+        $oneValues = array_keys($one);
+        foreach($one as $oneValue => $oneC)
+        {
+            $temp = range($oneValue - $lastCard['length']+1,$oneValue);
+            if(count(array_intersect($temp,$oneValues)) == $lastCard['length']) {
+                $tipCard[$oneValue] = [];
+                foreach($temp as $v)
+                {
+                    $tipCard[$oneValue] = array_merge($tipCard[$oneValue],$one[$v]);
+                }
+
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipCompany($card,$lastCard)
+    {
+        $tipCard = [];
+        $valueTimes = static::cardValueTimes($card);
+        $one = static::tipSameCompare($valueTimes,$card,$lastCard['value']-$lastCard['length']/2+1,2,true);
+        $oneValues = array_keys($one);
+        foreach($one as $oneValue => $oneC)
+        {
+            $temp = range($oneValue - $lastCard['length']/2+1,$oneValue);
+            if(count(array_intersect($temp,$oneValues)) == $lastCard['length']/2) {
+                $tipCard[$oneValue] = [];
+                foreach($temp as $v)
+                {
+                    $tipCard[$oneValue] = array_merge($tipCard[$oneValue],$one[$v]);
+                }
+
+            }
+        }
+        return $tipCard;
+    }
+
+    public static function tipSameCompare($valueTimes,$card,$min,$length,$top= false)
+    {
+        $tipCard = [];
+        $point = Config::getInstance()->getConf('card')['value'];
+        foreach($valueTimes as $value =>$times)
+        {
+            if($value > $min and $times >= $length)
+            {
+                if($top and $value >=13)
+                    continue;
+
+                $tipCard[$value] = [] ;
+            }
+
+        }
+
+        if(count($tipCard)>0)
+        {
+            $pointKeys = array_keys($tipCard);
+            foreach($card as $c)
+            {
+                if(in_array($point[substr($c,1,2)],$pointKeys) and count($tipCard[$point[substr($c,1,2)]]) < $length)
+                {
+                    $tipCard[$point[substr($c,1,2)]][] = $c;
+                }
+            }
+        }
+        ksort($tipCard);
+        return $tipCard;
+    }
+
+
 
 }

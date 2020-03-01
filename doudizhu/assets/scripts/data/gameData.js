@@ -7,6 +7,8 @@ const gameData = function(){
     that.state = 0;
     that.lord = null;
     that.playCards = [];
+    that.tipCard = [];
+    that.tipIndex = 0;
     return that;
 };
 export default gameData;

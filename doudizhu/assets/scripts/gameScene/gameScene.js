@@ -78,6 +78,11 @@ cc.Class({
         });
 
         global.socket.onPlayTurn((data)=>{
+            global.gameData.tipCard = data[1].tipCard;
+            if(global.gameData.tipCard == 0)
+                global.gameData.tipIndex = -1;
+            else
+                global.gameData.tipIndex = 0;
             this.gameUI.emit('playTurn',{});
             var playerList = this.playerParent.children;
             for(var i=0;i<playerList.length;i++)
@@ -87,22 +92,15 @@ cc.Class({
         });
 
         global.socket.onOtherPlay((data)=>{
-            cc.log('in');
-            cc.log(data);
-            if(data[1].push == 0)
-            {
-                return;
-            }
-            else
+            if(data[1].push == 1)
             {
                 global.gameData['c'+data[1].p].splice(0,data[1].card.length);
-                var playerList = this.playerParent.children;
-                for(var i=0;i<playerList.length;i++)
-                {
-                    playerList[i].emit('otherPlay',data[1]);
-                }
             }
-
+            var playerList = this.playerParent.children;
+            for(var i=0;i<playerList.length;i++)
+            {
+                playerList[i].emit('otherPlay',data[1]);
+            }
         });
 
         cc.systemEvent.on('selfPlayCard',function(data){

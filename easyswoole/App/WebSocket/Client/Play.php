@@ -44,7 +44,6 @@ class Play extends Base
             return;
         }
         $lastCard = $playService->lastCard($content['roomId']);
-        var_dump($lastCard);
         if(empty($lastCard) and !$content['push'])
         {
             $this->response()->setMessage($this->jsonReturn(50004, [], '必须出牌', $content['callBackIndex']));
@@ -58,9 +57,10 @@ class Play extends Base
         {
             $playService->setLastCard($content['roomId'],[]);
             $this->response()->setMessage($this->jsonReturn(200, ['route' => 'play.play','push'=>0,'card'=>[]], '', $content['callBackIndex']));
-            $this->notifyFds($otherFds,$this->jsonReturn(['route' => 'play.otherPlay','push'=>0,'card'=>[]]));
+            $this->notifyFds($otherFds,$this->jsonReturn(201,['route' => 'play.otherPlay','push'=>0,'card'=>[],'p'=>$user['p']]));
             $user = $playService->nextPlayer($content['roomId']);
-            $this->notifyFd($user['fd'], $this->jsonReturn(201, ['route' => 'play.turn']));
+            $tipCard = PlayService::getInstance()->tipCard($content['roomId'],$user['p']);
+            $this->notifyFd($user['fd'], $this->jsonReturn(201, ['route' => 'play.turn','tipCard'=>$tipCard]));
             return ;
         }
 
@@ -75,7 +75,6 @@ class Play extends Base
             $this->response()->setMessage($this->jsonReturn(50006, [], '牌型错误', $content['callBackIndex']));
             return;
         }
-        var_dump($thisCard);
 
         if(!empty($lastCard) and !Card::compare($thisCard,$lastCard))
         {
@@ -94,6 +93,7 @@ class Play extends Base
 
         $this->notifyFds($otherFds,$this->jsonReturn(201,['route' => 'play.otherPlay','push'=>1,'card'=>$cards,'p'=>$user['p']]));
         $user = $playService->nextPlayer($content['roomId']);
-        $this->notifyFd($user['fd'], $this->jsonReturn(201, ['route' => 'play.turn']));
+        $tipCard = PlayService::getInstance()->tipCard($content['roomId'],$user['p']);
+        $this->notifyFd($user['fd'], $this->jsonReturn(201, ['route' => 'play.turn','tipCard'=>$tipCard]));
     }
 }

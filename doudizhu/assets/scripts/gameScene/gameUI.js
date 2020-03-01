@@ -88,17 +88,31 @@ cc.Class({
                 if(data.push == 0)
                 {
                     cc.systemEvent.emit('resetSelfPlayCard',{});
-                    return;
                 }
-                if(global.gameData.playCards.length != 0)
-                    cc.systemEvent.emit('selfPlayCard',data);
+                cc.systemEvent.emit('selfPlayCard',data);
             }
             else
             {
                 cc.systemEvent.emit('resetSelfPlayCard',{});
             }
         });
-    }
+    },
+
+    onTipClick:function(target,customData)
+    {
+        if(global.gameData.tipIndex != -1)
+            this.sendTips();
+        else
+            cc.log('no tips');
+    },
+
+    sendTips:function(){
+        cc.systemEvent.emit('tipCard',global.gameData.tipCard[global.gameData.tipIndex%global.gameData.tipCard.length]);
+        global.gameData.tipIndex++;
+    },
+
+
+
 
     // update (dt) {},
 });

@@ -204,3 +204,337 @@ Stack trace:
 [2020-02-23 15:59:48 *8496.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
 [2020-02-23 20:23:45 *8496.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
 [2020-02-23 20:26:48 *23610.0]	NOTICE	php_swoole_server_rshutdown (ERRNO 9003): worker process is terminated by exit()/die()
+[2020-02-23 20:31:46 #8493.1]	INFO	Server is shutdown now
+string(22) "shake success at fd :1"
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+array(0) {
+}
+array(0) {
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(8)
+  ["length"]=>
+  int(8)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(8)
+  ["length"]=>
+  int(8)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(8)
+  ["length"]=>
+  int(8)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(9)
+  ["length"]=>
+  int(8)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(9)
+  ["length"]=>
+  int(8)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(9)
+  ["length"]=>
+  int(8)
+}
+array(0) {
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(3)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(3)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(5)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(3)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(6)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(5)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(11)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(6)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(13)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(11)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(13)
+}
+array(0) {
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(2)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(2)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(3)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(2)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(5)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(3)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(6)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(5)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(11)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(6)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(13)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(11)
+}
+array(2) {
+  ["type"]=>
+  string(4) "bomb"
+  ["value"]=>
+  int(14)
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(13)
+}
+array(2) {
+  ["type"]=>
+  string(4) "bomb"
+  ["value"]=>
+  int(14)
+}
+array(0) {
+}
+array(2) {
+  ["type"]=>
+  string(9) "threePair"
+  ["value"]=>
+  int(9)
+}
+array(2) {
+  ["type"]=>
+  string(9) "threePair"
+  ["value"]=>
+  int(9)
+}
+array(2) {
+  ["type"]=>
+  string(9) "threePair"
+  ["value"]=>
+  int(9)
+}
+array(0) {
+}
+array(2) {
+  ["type"]=>
+  string(6) "single"
+  ["value"]=>
+  int(12)
+}
+string(22) "shake success at fd :5"
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+array(0) {
+}
+array(0) {
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(6)
+  ["length"]=>
+  int(6)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(6)
+  ["length"]=>
+  int(6)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(7)
+  ["length"]=>
+  int(6)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(6)
+  ["length"]=>
+  int(6)
+}
+array(3) {
+  ["type"]=>
+  string(8) "straight"
+  ["value"]=>
+  int(7)
+  ["length"]=>
+  int(6)
+}
+array(0) {
+}
+string(22) "shake success at fd :8"
+string(22) "shake success at fd :9"
+string(23) "shake success at fd :10"
+array(0) {
+}
+array(2) {
+  ["type"]=>
+  string(8) "threeOne"
+  ["value"]=>
+  int(1)
+}
+array(2) {
+  ["type"]=>
+  string(8) "threeOne"
+  ["value"]=>
+  int(1)
+}
+array(2) {
+  ["type"]=>
+  string(8) "threeOne"
+  ["value"]=>
+  int(1)
+}
+array(2) {
+  ["type"]=>
+  string(8) "threeOne"
+  ["value"]=>
+  int(1)
+}
+array(2) {
+  ["type"]=>
+  string(4) "bomb"
+  ["value"]=>
+  int(11)
+}
+[2020-02-24 16:47:59 #24079.1]	INFO	Server is shutdown now
+[2020-02-27 18:35:24 *1717.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-27 18:35:24 #1714.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-27 18:35:24 $1715.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-02-27 18:35:24 $1715.0]	WARNING	swManager_check_exit_status: worker#1[pid=1718] abnormal exit, status=0, signal=1
+[2020-02-28 14:14:34 #1714.1]	INFO	Server is shutdown now

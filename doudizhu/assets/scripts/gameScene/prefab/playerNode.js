@@ -16,7 +16,8 @@ cc.Class({
         robFrame:cc.SpriteFrame,
         noRobFrame:cc.SpriteFrame,
         lordFrame:cc.SpriteFrame,
-        cardPlayNode:cc.Node
+        cardPlayNode:cc.Node,
+        noPushLab:cc.Prefab,
     },
 
     ctor:function(){
@@ -166,50 +167,60 @@ cc.Class({
             if(this.id != global.playerData.id)
                 return;
 
-            var playCards = data.card;
-            global.gameData.playCards = [];
-            for(var k = 0;k<playCards.length;k++)
-            {
-                if(global.gameData['c'+this.p].indexOf(playCards[k]) != -1)
-                {
-                    global.gameData['c'+this.p].splice(global.gameData['c'+this.p].indexOf(playCards[k]),1);
-                }
-            }
-        
-            var cards = this.cardParent.children;
-            var index = 0;
-            for(var i=0;i<cards.length;i++)
-            {
-                if(cards[i].getComponent(cards[i].name).flag == 1)
-                {
-                    cards[i].runAction(cc.sequence(
-                        cc.spawn(cc.moveTo(0.3,cc.v2(350,150)),cc.scaleTo(0.3,0.5,0.5)),
-                        cc.callFunc(function(target,j){
-                            target.destroy();
-                            var card = cc.instantiate(this.cardPrefab);
-                            card.parent = this.cardPlayNode;
-                            card.scale = 0.5;
-                            card.setPosition(cc.v2(playCards.length*card.width*(-0.125)+card.width*0.25*j,0));
-                            card.emit('init',playCards[j]);
-                            card.emit('untouch',{});
-                        }.bind(this),cards[i],index)
-                        )
-                    );
-                    index++;
-                }
-            }
 
-            var cardList = this.cardParent.children;
-            var indexCard = 0;
-            var len = global.gameData['c'+this.p].length;
-            for(var i=0;i<cardList.length;i++)
+            if(data.push == 1)
             {
-                if(cardList[i] && playCards.indexOf(cardList[i].getComponent('card').value) == -1)
+                var playCards = data.card;
+                global.gameData.playCards = [];
+                for(var k = 0;k<playCards.length;k++)
                 {
-                    cardList[i].setPosition(cc.v2(cardList[i].width*0.4*9-cardList[i].width*0.2*len+cardList[i].width*0.4*indexCard));
-                    indexCard++;
+                    if(global.gameData['c'+this.p].indexOf(playCards[k]) != -1)
+                    {
+                        global.gameData['c'+this.p].splice(global.gameData['c'+this.p].indexOf(playCards[k]),1);
+                    }
+                }
+            
+                var cards = this.cardParent.children;
+                var index = 0;
+                for(var i=0;i<cards.length;i++)
+                {
+                    if(cards[i].getComponent(cards[i].name).flag == 1)
+                    {
+                        cards[i].runAction(cc.sequence(
+                            cc.spawn(cc.moveTo(0.3,cc.v2(350,150)),cc.scaleTo(0.3,0.5,0.5)),
+                            cc.callFunc(function(target,j){
+                                target.destroy();
+                                var card = cc.instantiate(this.cardPrefab);
+                                card.parent = this.cardPlayNode;
+                                card.scale = 0.5;
+                                card.setPosition(cc.v2(playCards.length*card.width*(-0.125)+card.width*0.25*j,0));
+                                card.emit('init',playCards[j]);
+                                card.emit('untouch',{});
+                            }.bind(this),cards[i],index)
+                            )
+                        );
+                        index++;
+                    }
+                }
+    
+                var cardList = this.cardParent.children;
+                var indexCard = 0;
+                var len = global.gameData['c'+this.p].length;
+                for(var i=0;i<cardList.length;i++)
+                {
+                    if(cardList[i] && playCards.indexOf(cardList[i].getComponent('card').value) == -1)
+                    {
+                        cardList[i].setPosition(cc.v2(cardList[i].width*0.4*9-cardList[i].width*0.2*len+cardList[i].width*0.4*indexCard));
+                        indexCard++;
+                    }
                 }
             }
+            else
+            {
+                var noPushLab = cc.instantiate(this.noPushLab);
+                noPushLab.parent = this.cardPlayNode;
+            }
+            
         
             
         }.bind(this));
@@ -232,43 +243,81 @@ cc.Class({
         this.node.on('otherPlay',function(data){
             if(this.p != data.p)
                 return;
-                
-            this.cardPlayNode.destroyAllChildren();    
-            var cards = this.cardParent.children;
-            var len = cards.length;
-            for(var i=len-1;i>(len -1 - data.card.length);i--)
-            {
-                cards[i].destroy();
-            }
 
-            var nextP = (global.playerData.p + 1)%3==0?3:(global.playerData.p + 1)%3;
-            if(data.p == nextP)
+            this.cardPlayNode.destroyAllChildren();   
+            if(data.push == 1)
             {
-                for(var i =0;i<data.card.length;i++)
+                var cards = this.cardParent.children;
+                var len = cards.length;
+                for(var i=len-1;i>(len -1 - data.card.length);i--)
                 {
-                    var card = cc.instantiate(this.cardPrefab);
-                    card.parent = this.cardPlayNode;
-                    card.scale = 0.5;
-                    card.zindex = i;
-                    card.setPosition(cc.v2(card.width*0.2*i,0));
-                    card.emit('init',data.card[i]);
-                    card.emit('untouch',{});
+                    cards[i].destroy();
+                }
+    
+                var nextP = (global.playerData.p + 1)%3==0?3:(global.playerData.p + 1)%3;
+                if(data.p == nextP)
+                {
+                    for(var i =0;i<data.card.length;i++)
+                    {
+                        var card = cc.instantiate(this.cardPrefab);
+                        card.parent = this.cardPlayNode;
+                        card.scale = 0.5;
+                        card.zindex = i;
+                        card.setPosition(cc.v2(card.width*0.2*i,0));
+                        card.emit('init',data.card[i]);
+                        card.emit('untouch',{});
+                    }
+                }
+                else
+                {
+                    for(var i =0;i<data.card.length;i++)
+                    {
+                        var card = cc.instantiate(this.cardPrefab);
+                        card.parent = this.cardPlayNode;
+                        card.scale = 0.5;
+                        card.zindex = i;
+                        card.setPosition(cc.v2((data.card.length -i -1)*card.width*(-0.2),0));
+                        card.emit('init',data.card[i]);
+                        card.emit('untouch',{});
+                    }
                 }
             }
             else
             {
-                for(var i =0;i<data.card.length;i++)
+                var noPushLab = cc.instantiate(this.noPushLab);
+                noPushLab.parent = this.cardPlayNode;
+            }    
+
+        }.bind(this));
+
+        cc.systemEvent.on('tipCard',function(tipCards){
+            if(this.id != global.playerData.id)
+                return;
+            global.gameData.playCards = [];
+            var cards = this.cardParent.children;
+            for(var i=0;i<cards.length;i++)
+            {
+                if(tipCards.indexOf(cards[i].getComponent('card').value) != -1)
                 {
-                    var card = cc.instantiate(this.cardPrefab);
-                    card.parent = this.cardPlayNode;
-                    card.scale = 0.5;
-                    card.zindex = i;
-                    card.setPosition(cc.v2((data.card.length -i -1)*card.width*(-0.2),0));
-                    card.emit('init',data.card[i]);
-                    card.emit('untouch',{});
+                    if(cards[i].getComponent('card').flag == 0)
+                    {
+                        cards[i].y+=20;
+                        cards[i].getComponent('card').flag = 1;
+                    }
+                        
+                    global.gameData.playCards.push(cards[i].getComponent('card').value);
+                }
+                else
+                {
+                    if(cards[i].getComponent('card').flag == 1)
+                    {
+                        cards[i].y-=20;
+                        cards[i].getComponent('card').flag = 0;
+                    }
                 }
             }
         }.bind(this));
+
     }
 
     // update (dt) {},
