@@ -104,6 +104,10 @@ const SocketController = function(){
         _event.on('play.otherPlay',cb);
     };
 
+    that.onGameEnd = function(cb){
+        _event.on('game.end',cb);
+    };
+
     return that;
 };
 export default SocketController;

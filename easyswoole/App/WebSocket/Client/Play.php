@@ -8,6 +8,8 @@
 
 namespace App\WebSocket\Client;
 
+use App\WebSocket\Service\GameService;
+use App\WebSocket\Service\RobService;
 use App\WebSocket\Service\RoomService;
 use App\WebSocket\Service\UserService;
 use App\WebSocket\Service\PlayService;
@@ -90,6 +92,32 @@ class Play extends Base
 
         $playService->setLastCard($content['roomId'],$thisCard);
         $this->response()->setMessage($this->jsonReturn(200, ['route' => 'play.play','push'=>1,'card'=>$cards], '', $content['callBackIndex']));
+
+
+        if($playService->isEnd($content['roomId'],$user['p']))
+        {
+            $lord = RobService::getInstance()->getLord($content['roomId']);
+            GameService::getInstance()->destroy($content['roomId']);
+            RoomService::getInstance()->restart($content['roomId']);
+            if($user['p'] == $lord)
+            {
+                $this->notifyFd($user['fd'],$this->jsonReturn(201,['route' => 'game.end','win'=>1]));
+                $this->notifyFds($otherFds,$this->jsonReturn(201,['route' => 'game.end','win'=>0]));
+            }
+            else
+            {
+                $this->notifyFd($user['fd'],$this->jsonReturn(201,['route' => 'game.end','win'=>1]));
+                foreach($otherFds as $p => $fd)
+                {
+                    if($p == $lord)
+                        $this->notifyFd($otherFds[$lord],$this->jsonReturn(201,['route' => 'game.end','win'=>0]));
+                    else
+                        $this->notifyFd($otherFds[$lord],$this->jsonReturn(201,['route' => 'game.end','win'=>1]));
+                }
+            }
+
+            return;
+        }
 
         $this->notifyFds($otherFds,$this->jsonReturn(201,['route' => 'play.otherPlay','push'=>1,'card'=>$cards,'p'=>$user['p']]));
         $user = $playService->nextPlayer($content['roomId']);

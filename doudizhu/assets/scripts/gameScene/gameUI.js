@@ -47,6 +47,13 @@ cc.Class({
         this.node.on('playTurn',function(){
             this.playUI.active = true;
         }.bind(this));
+
+
+        this.node.on('restart',function(data){
+            this.bottom.destroyAllChildren();
+            this.bottom.setPosition(cc.v2(0,50));
+            this.bottom.scale = 1;
+        }.bind(this));
     },
 
     start () {

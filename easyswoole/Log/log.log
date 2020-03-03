@@ -5306,3 +5306,549 @@ Stack trace:
 [2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
 [2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
 [2020-03-01 18:15:46][DEBUG][WARNING] : [array_merge(): Argument #1 is not an array at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:818]
+[2020-03-02 02:52:14][DEBUG][INFO] : [backTest:[{"id":"1","account":"1","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"1","create_at":"2020-02-07 11:06:14","update_at":"2020-02-07 11:06:28","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"2","account":"2","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"2","create_at":"2020-02-07 19:44:17","update_at":"2020-02-07 19:44:17","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"},{"id":"3","account":"3","password":"b5378cfe69e292ffef2e2d2624d3203e","gold":"1000","nickname":"3","create_at":"2020-02-10 20:28:04","update_at":"2020-02-10 20:28:04","avatarUrl":"http:\/\/139.224.25.229\/header.jpg"}]]
+[2020-03-02 09:25:47][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php:63
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php(63): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Core.php(114): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 3, '0.0.0.0', Array, 2, 1)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(54): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /data/doudizhu/easyswoole/easyswoole(24): EasySwoole\E at file:/data/doudizhu/easyswoole/vendor/easyswoole/easyswoole/src/ServerManager.php line:63]
+[2020-03-02 09:26:57][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:257]
+[2020-03-02 09:26:57][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:257]
+[2020-03-02 09:27:14][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:257]
+[2020-03-02 09:27:14][DEBUG][WARNING] : [A non-numeric value encountered at file:/data/doudizhu/easyswoole/App/WebSocket/Common/Card.php line:257]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:43][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-02 17:38:44][DEBUG][ERROR] : [Uncaught Swoole\Error: API must be called in the coroutine in /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php:32
+Stack trace:
+#0 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php(32): Swoole\Coroutine\Client->connect('127.0.0.1', 6379, 3)
+#1 /data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Redis.php(217): EasySwoole\Redis\Client->connect(3)
+#2 /data/doudizhu/easyswoole/vendor/easyswoole/redis-pool/src/RedisPool.php(26): EasySwoole\Redis\Redis->connect(3)
+#3 [internal function]: EasySwoole\RedisPool\RedisPool->EasySwoole\RedisPool\{closure}(Object(EasySwoole\Pool\Config))
+#4 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/MagicPool.php(21): call_user_func(Object(Closure), Object(EasySwoole\Pool\Config))
+#5 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(272): EasySwoole\Pool\MagicPool->createObject()
+#6 /data/doudizhu/easyswoole/vendor/easyswoole/pool/src/AbstractPool.php(108): EasySwoole\Pool\AbstractPool->initObject()
+#7 /data/doudizhu/easyswool at file:/data/doudizhu/easyswoole/vendor/easyswoole/redis/src/Client.php line:32]
+[2020-03-03 17:16:17][DEBUG][WARNING] : [json_decode() expects parameter 1 to be string, array given at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/RoomCache.php line:167]
+[2020-03-03 17:16:17][DEBUG][WARNING] : [json_decode() expects parameter 1 to be string, array given at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/RoomCache.php line:167]
+[2020-03-03 17:16:17][DEBUG][WARNING] : [json_decode() expects parameter 1 to be string, array given at file:/data/doudizhu/easyswoole/App/WebSocket/Cache/RoomCache.php line:167]

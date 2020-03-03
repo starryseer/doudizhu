@@ -55,4 +55,9 @@ class RobService
         }
 
     }
+
+    public function getLord($roomId)
+    {
+        return GameCache::getInstance()->getLord($roomId);
+    }
 }

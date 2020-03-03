@@ -77,4 +77,13 @@ class PlayService
         $card = GameService::getInstance()->cardsBySeat($roomId,$p);
         return Card::tipCard($card,$lastCard);
     }
+
+    public function isEnd($roomId,$p)
+    {
+        $card = GameService::getInstance()->cardsBySeat($roomId,$p);
+        if(empty($card))
+            return true;
+
+        return false;
+    }
 }

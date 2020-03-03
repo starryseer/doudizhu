@@ -28,72 +28,72 @@ class GameCache
             }
             $info = [
                 'id' => $roomId,
-//                'c1' => json_encode($cards[0],true),
-//                'c2' => json_encode($cards[1],true),
-//                'c3' => json_encode($cards[2],true),
-//                'bottom' => json_encode($cards[3],true),
-                'c1'=>json_encode([
-                    'M0',
-                    'M1',
-                    'S2',
-                    'H2',
-                    'C2',
-                    'D2',
-                    'SA',
-                    'HA',
-                    'CA',
-                    'DA',
-                    'SK',
-                    'HK',
-                    'CK',
-                    'DK',
-                    'SQ',
-                    'HQ',
-                    'CQ',
-                ],true),
-                'c2'=>json_encode([
-                    'DQ',
-                    'SJ',
-                    'HJ',
-                    'CJ',
-                    'DJ',
-                    'S10',
-                    'H10',
-                    'C10',
-                    'D10',
-                    'S9',
-                    'H9',
-                    'C9',
-                    'D9',
-                    'S8',
-                    'H8',
-                    'C8',
-                    'D8',
-                ],true),
-                'c3'=>json_encode([
-                    'S7',
-                    'H7',
-                    'C7',
-                    'D7',
-                    'S6',
-                    'H6',
-                    'C6',
-                    'D6',
-                    'S5',
-                    'H5',
-                    'C5',
-                    'D5',
-                    'S4',
-                    'H4',
-                    'C4',
-                    'D4',
-                    'S3',
-                ], true),
-                'bottom'=>json_encode([
-                    'H3',
-                    'C3',
-                    'D3',
-                ],true),
+                'c1' => json_encode($cards[0],true),
+                'c2' => json_encode($cards[1],true),
+                'c3' => json_encode($cards[2],true),
+                'bottom' => json_encode($cards[3],true),
+//                'c1'=>json_encode([
+//                    'M0',
+//                    'M1',
+//                    'S2',
+//                    'H2',
+//                    'C2',
+//                    'D2',
+//                    'SA',
+//                    'HA',
+//                    'CA',
+//                    'DA',
+//                    'SK',
+//                    'HK',
+//                    'CK',
+//                    'DK',
+//                    'SQ',
+//                    'HQ',
+//                    'CQ',
+//                ],true),
+//                'c2'=>json_encode([
+//                    'DQ',
+//                    'SJ',
+//                    'HJ',
+//                    'CJ',
+//                    'DJ',
+//                    'S10',
+//                    'H10',
+//                    'C10',
+//                    'D10',
+//                    'S9',
+//                    'H9',
+//                    'C9',
+//                    'D9',
+//                    'S8',
+//                    'H8',
+//                    'C8',
+//                    'D8',
+//                ],true),
+//                'c3'=>json_encode([
+//                    'S7',
+//                    'H7',
+//                    'C7',
+//                    'D7',
+//                    'S6',
+//                    'H6',
+//                    'C6',
+//                    'D6',
+//                    'S5',
+//                    'H5',
+//                    'C5',
+//                    'D5',
+//                    'S4',
+//                    'H4',
+//                    'C4',
+//                    'D4',
+//                    'S3',
+//                ], true),
+//                'bottom'=>json_encode([
+//                    'H3',
+//                    'C3',
+//                    'D3',
+//                ],true),
                 'rob'=>json_encode($rob,true),
                 'lord'=>'',
                 'turn'=>'',
@@ -137,6 +137,14 @@ class GameCache
                 'state'=>1
             ]);
             return true;
+        });
+    }
+
+    public function getLord($roomId)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId) {
+            $keyName = self::$key.":".$roomId;
+            return $redis->hget($keyName,'lord');
         });
     }
 
@@ -203,6 +211,14 @@ class GameCache
         return Redis::invoke('redis', function ($redis)use($roomId,$lastCards) {
             $keyName = self::$key.":".$roomId;
             return $redis->hset($keyName,'lastCards',json_encode($lastCards,true));
+        });
+    }
+
+    public function destroy($roomId)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId) {
+            $keyName = self::$key.":".$roomId;
+            return $redis->delete($keyName);
         });
     }
 }

@@ -5,7 +5,6 @@ namespace App\WebSocket\Service;
 
 use App\WebSocket\Cache\RoomCache;
 use App\WebSocket\Cache\PlayerCache;
-use \EasySwoole\EasySwoole\Config;
 
 class RoomService
 {
@@ -97,6 +96,10 @@ class RoomService
             return true;
 
         return false;
+    }
 
+    public function restart($roomId)
+    {
+        RoomCache::getInstance()->restart($roomId);
     }
 }

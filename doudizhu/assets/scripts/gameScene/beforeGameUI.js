@@ -8,7 +8,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        this.node.on('restart',function(data){
+            this.readyButton.active = true;
+        }.bind(this));
+    },
 
     start () {
 

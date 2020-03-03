@@ -253,8 +253,9 @@ class Card
         $times = array_count_values($cardList);
         if(array_values($times) == [3,3])
         {
+            $cardValue = Config::getInstance()->getConf('card')['value'];
             $keys = array_keys($times);
-            if(abs($keys[0] - $keys[1])==1)
+            if(abs($cardValue[$keys[0]] - $cardValue[$keys[1]])==1)
                 return true;
         }
         return false;

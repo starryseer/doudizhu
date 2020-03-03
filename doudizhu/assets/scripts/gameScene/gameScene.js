@@ -13,7 +13,9 @@ cc.Class({
         playNodePrefab:cc.Prefab,
         playerPos:cc.Node,
         playerParent:cc.Node,
-        gameUI:cc.Node
+        beforeGameUI:cc.Node,
+        gameUI:cc.Node,
+        endGameUI:cc.Node
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -108,6 +110,16 @@ cc.Class({
             for(var i=0;i<playerList.length;i++)
             {
                 playerList[i].emit('selfPlayerCard',data);
+            }
+        }.bind(this));
+
+        cc.systemEvent.on('restartGame',function(data){
+            this.beforeGameUI.emit('restart',{});
+            this.gameUI.emit('restart',{});
+            var playerList = this.playerParent.children;
+            for(var i=0;i<playerList.length;i++)
+            {
+                playerList[i].emit('restart',{});
             }
         }.bind(this));
     },

@@ -15,6 +15,10 @@ use EasySwoole\Socket\Dispatcher;
 use App\WebSocket\WebSocketParser;
 use App\WebSocket\WebSocketEvent;
 
+use App\Process\Process;
+
+
+
 class EasySwooleEvent implements Event
 {
 
@@ -39,6 +43,19 @@ class EasySwooleEvent implements Event
                 }
             }
         }
+    }
+
+    public static function addProcess()
+    {
+        $processConfig = new \EasySwoole\Component\Process\Config();
+        $processConfig->setProcessName('matchProcess');
+        /*
+         * 传递给进程的参数
+        */
+        $processConfig->setArg([
+            'arg1'=>time()
+        ]);
+        \EasySwoole\EasySwoole\ServerManager::getInstance()->getSwooleServer()->addProcess((new Process($processConfig))->getProcess());
     }
 
     public static function mainServerCreate(EventRegister $register)
@@ -87,6 +104,8 @@ class EasySwooleEvent implements Event
         $register->set(EventRegister::onClose, function (\swoole_server $server, int $fd, int $reactorId) use ($websocketEvent) {
             $websocketEvent->onClose($server, $fd, $reactorId);
         });
+
+        self::addProcess();
     }
 
     public static function onRequest(Request $request, Response $response): bool

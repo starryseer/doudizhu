@@ -318,6 +318,14 @@ cc.Class({
             }
         }.bind(this));
 
+        this.node.on('restart',function(data){
+            this.readyIcon.active = false;
+            this.offlineIcon.active = false;
+            this.cardParent.destroyAllChildren();
+            this.icon.spriteFrame = null;
+            this.cardPlayNode.destroyAllChildren();
+        }.bind(this));
+
     }
 
     // update (dt) {},

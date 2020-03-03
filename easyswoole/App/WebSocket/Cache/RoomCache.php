@@ -153,4 +153,23 @@ class RoomCache
             return json_decode($redis->hget($keyName,'p'.$p),true);
         });
     }
+
+    public function restart($roomId)
+    {
+        return Redis::invoke('redis', function ($redis)use($roomId) {
+            $keyName = self::$key.":".$roomId;
+            $redis->hset($keyName,'state',0);
+            $pos = ['p1','p2','p3'];
+            $players = $redis->hMget($keyName,$pos);
+            foreach($players as $player)
+            {
+                if($player)
+                {
+                    $player = json_decode($player,true);
+                    $player['ready'] = 0;
+                    $redis->hset($keyName,'p'.$player['p'],json_encode($player,true));
+                }
+            }
+        });
+    }
 }
