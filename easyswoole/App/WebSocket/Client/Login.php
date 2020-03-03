@@ -16,6 +16,7 @@ class Login extends Base
             return;
         }
 
+        var_dump($content);
         if(!empty($user = UserService::getInstance()->login($content['account'],$content['password'],$this->caller()->getClient()->getFd())))
             $this->response()->setMessage($this->jsonReturn(200,['route'=>'login.login','user'=>$user],'',$content['callBackIndex']));
         else

@@ -120,6 +120,7 @@ class WebSocketEvent
      */
     public function onClose(\swoole_server $server, int $fd, int $reactorId)
     {
+        echo $fd."close\n";
         /** @var array $info */
         $info = $server->getClientInfo($fd);
         /**

@@ -855,3 +855,102 @@ string(22) "shake success at fd :2"
 [2020-03-02 17:40:59 $31522.0]	WARNING	swManager_check_exit_status: worker#1[pid=31710] abnormal exit, status=255, signal=0
 [2020-03-02 17:40:59 $31522.0]	WARNING	swManager_check_exit_status: worker#1[pid=31711] abnormal exit, status=255, signal=0
 [2020-03-02 17:41:00 $31522.0]	WARNING	swManager_check_exit_status: worker#1[pid=31712] abnormal exit, status=255, signal=0
+string(22) "shake success at fd :1"
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
+string(22) "shake success at fd :5"
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+string(22) "shake success at fd :8"
+string(22) "shake success at fd :9"
+[2020-03-03 18:26:35 #8585.1]	INFO	Server is shutdown now
+string(22) "shake success at fd :1"
+1close
+string(22) "shake success at fd :2"
+2close
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
+4close
+string(22) "shake success at fd :5"
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+7close
+string(22) "shake success at fd :8"
+8close
+5close
+string(22) "shake success at fd :9"
+string(23) "shake success at fd :10"
+string(23) "shake success at fd :11"
+string(23) "shake success at fd :12"
+string(23) "shake success at fd :13"
+string(23) "shake success at fd :14"
+string(23) "shake success at fd :15"
+string(23) "shake success at fd :16"
+string(23) "shake success at fd :17"
+string(23) "shake success at fd :18"
+18close
+string(23) "shake success at fd :19"
+string(2) "in"
+[2020-03-03 21:37:36 #19007.1]	INFO	Server is shutdown now
+string(22) "shake success at fd :1"
+1close
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+[2020-03-03 21:47:31 #20435.1]	INFO	Server is shutdown now
+string(22) "shake success at fd :1"
+string(2) "in"
+array(3) {
+  ["account"]=>
+  string(1) "1"
+  ["password"]=>
+  string(8) "3166sb88"
+  ["callBackIndex"]=>
+  int(1)
+}
+string(2) "in"
+string(2) "in"
+1close
+string(22) "shake success at fd :2"
+string(22) "shake success at fd :3"
+string(22) "shake success at fd :4"
+string(2) "in"
+array(3) {
+  ["account"]=>
+  string(1) "1"
+  ["password"]=>
+  string(8) "3166sb88"
+  ["callBackIndex"]=>
+  int(1)
+}
+4close
+string(22) "shake success at fd :5"
+3close
+string(22) "shake success at fd :6"
+string(22) "shake success at fd :7"
+string(2) "in"
+array(3) {
+  ["account"]=>
+  string(1) "1"
+  ["password"]=>
+  string(8) "3166sb88"
+  ["callBackIndex"]=>
+  int(1)
+}
+string(2) "in"
+string(22) "shake success at fd :8"
+string(2) "in"
+string(22) "shake success at fd :9"
+string(2) "in"
+array(3) {
+  ["account"]=>
+  string(1) "1"
+  ["password"]=>
+  string(8) "3166sb88"
+  ["callBackIndex"]=>
+  int(1)
+}
+string(2) "in"
+string(2) "in"
+8close
+6close

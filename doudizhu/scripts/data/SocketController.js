@@ -1,4 +1,4 @@
-import EventListener from '../utility/EventListener';
+import EventListener from './../utility/EventListener';
 const SocketController = function(){
     let that = {};
     let socket = new WebSocket(defines.url);
